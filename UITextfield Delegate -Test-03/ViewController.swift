@@ -8,18 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+      @IBOutlet weak var lahello: UILabel!
+      
+      @IBOutlet weak var txname: UITextField!
       override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
+            txname.placeholder = "입력을 하세요"
+            txname.clearButtonMode = UITextFieldViewMode.whileEditing
+            txname.borderStyle = UITextBorderStyle.line
       }
-
-      override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
+      @IBAction func btn(_ sender: Any) {
+            lahello.text = "Hello" + txname.text!
+            txname.text = ""
+            //키패드를 내림.
+            txname.resignFirstResponder()
       }
-
-
 }
 
