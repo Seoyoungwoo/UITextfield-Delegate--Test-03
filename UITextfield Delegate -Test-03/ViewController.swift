@@ -25,5 +25,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //키패드를 내림.
             txname.resignFirstResponder()
       }
+      // background view를 touch하면 키패드가 사라짐
+      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            view.endEditing(true)
+      }
 }
 
