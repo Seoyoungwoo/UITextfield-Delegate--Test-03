@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             txname.text = ""
             //키패드를 내림.
             txname.resignFirstResponder()
+            
       }
       // background view를 touch하면 키패드가 사라짐
       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -35,6 +36,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             view.endEditing(true)
             return true
             
+      }
+      func textFieldShouldClear(_ textField: UITextField) -> Bool {
+            view.backgroundColor = UIColor.green
+            return true
       }
       
       
