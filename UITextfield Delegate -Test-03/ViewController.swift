@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
       override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
+            txname.delegate = self
             txname.placeholder = "입력을 하세요"
             txname.clearButtonMode = UITextFieldViewMode.whileEditing
             txname.borderStyle = UITextBorderStyle.line
@@ -29,5 +30,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             view.endEditing(true)
       }
+      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            view.backgroundColor = UIColor.yellow
+            view.endEditing(true)
+            return true
+            
+      }
+      
+      
 }
 
